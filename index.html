@@ -1,11 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- setting lexend font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        .lexend-normal {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  
+}
+    </style>
+
+    <!-- adding daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://kit.fontawesome.com/08ef0f681f.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                'nav-bg': '#F9F7F3',
+                'button-bg':'#B4F461',
+                'card-1': '#E7C1D3',
+                'card-2': '#EFDA6E',
+                'card-3': '#A4DAC3',
+                'card-4': '#77AAEA',
+                'footer-bg': '#1C1C1C',
+              },
+            },
+          },
+        }
+      </script>
 </head>
-<body>
-    
+<body class="lexend-normal">
+    <header >
+        <div class="bg-nav-bg py-[24px]">
+            <nav class="max-w-[1170px] mx-auto mb-[40px]">
+                <div class="navbar">
+                    <div class="navbar-start">
+                      <a class="btn btn-primary bg-button-bg border-none text-black font-semibold text-[20px] px-[32px] hover:bg-button-bg/60">Blog</a>
+                    </div>
+                    <div class="navbar-center flex gap-5 justify-center items-center">
+                        <img src="assets/logo.png" alt="">
+                        <p class="font-semibold text-[20px] text-black">Donate Bangladesh</p>
+                      
+                    </div>
+                    <div class="navbar-end flex gap-3">
+                      <img src="assets/coin.png" alt="coin">
+                      <p class="font-medium text-gray-500 text-[20px]">5500 BDT</p>
+                    </div>
+                  </div>
+            </nav>
+        </div>
+        <div class=" flex items-center justify-center mt-[80px] gap-4">
+            <button class="btn btn-ghost bg-button-bg hover:bg-button-bg font-semibold text-black text-[20px] px-[32px]">Donation</button>
+            <button class="btn btn-active bg-white border-gray-300  text-gray-500 hover:bg-white font-semibold text-[20px] px-[32px]">History</button>
+        </div>
+    </header>
+    <main>
+        <section id="history" class="max-w-[1170px] mx-auto mt-10">
+            <div class="bg-gray-100 p-5 border border-gray-200 rounded-[16px] lg:flex ">
+                <div class="lg:w-1/2 ">
+                    <img src="assets/noakhali.png" alt="">
+                </div>
+                
+                <div class="lg:w-[50%] w-full">
+                    <div class="flex items-center gap-2 bg-gray-200  size-fit ">
+                        <img src="assets/coin.png" alt="">
+                        <p>0 BDT</p>
+                    </div>
+                    <h1>Donate for Flood at Noakhali, Bangladesh</h1>
+                    <h1 class="size-fit"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</h1>
+                    <input type="text"><br>
+                    <button class="bg-button-bg">Donate Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
