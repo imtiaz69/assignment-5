@@ -6,10 +6,12 @@ function donate(cardId) {
     
     if (isNaN(donationAmount) || donationAmount <= 0) {
       alert('Please enter a valid donation amount');
+      document.getElementById(`donation-input${cardId}`).value = '';
       return;
     }
     if (donationAmount > totalBalance) {
       alert('Insufficient balance');
+      document.getElementById(`donation-input${cardId}`).value = '';
       return;
     }
 
@@ -28,11 +30,18 @@ function donate(cardId) {
     document.getElementById(`donation-input${cardId}`).value = '';
 
     // for modal
-    const modal = document.getElementById('donation-modal');
+    const modal = document.getElementById('modal');
+    modal.classList.remove('hidden');
 }
 
+// closing modal
+document.getElementById('close-modal').addEventListener('click', function(){
+    const modal = document.getElementById('modal');
+    modal.classList.add('hidden');
+});
 
-  function addTransactionHistory(cardId, amount) {
+// adding transaction history
+function addTransactionHistory(cardId, amount) {
     const cardTitles = ['Flood at Noakhali, Bangladesh', 'Flood Relief in Feni,Bangladesh', 'Aid for Injured in the Quota Movement'];
     const now = new Date();
     const dateString = now.toDateString() + " " + now.toLocaleTimeString('en-GB', { timeZone: 'ASIA/DHAKA' });
