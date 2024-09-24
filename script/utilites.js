@@ -49,14 +49,14 @@ new Date().toLocaleString('en-US', {
 function addTransactionHistory(cardId, amount) {
     const cardTitles = ['Flood at Noakhali, Bangladesh', 'Flood Relief in Feni,Bangladesh', 'Aid for Injured in the Quota Movement'];
     const now = new Date();
-    const dateString = now.toDateString() + " " + now.toLocaleTimeString('en-GB', { timeZone: 'ASIA/DHAKA' });
+    const dateString = now.toString();
 
     const historyDiv = document.createElement('div');
     historyDiv.className = 'bg-white p-4 max-w-[1170px] mx-auto rounded-lg border border-gray-200';
 
     historyDiv.innerHTML = `
       <h3 class="text-lg font-semibold">${amount} Taka donated for ${cardTitles[cardId - 1]}</h3>
-      <p class="text-sm text-gray-500">Date: ${dateString} GMT +6 </p>
+      <p class="text-sm text-gray-500">Date: ${dateString} </p>
     `;
 
     document.getElementById('history').appendChild(historyDiv);
