@@ -40,6 +40,11 @@ document.getElementById('close-modal').addEventListener('click', function(){
     modal.classList.add('hidden');
 });
 
+new Date().toLocaleString('en-US', {
+    timeZone: 'Asia/Dhaka',
+    timeStyle: 'medium',
+    dateStyle: 'full'
+    });
 // adding transaction history
 function addTransactionHistory(cardId, amount) {
     const cardTitles = ['Flood at Noakhali, Bangladesh', 'Flood Relief in Feni,Bangladesh', 'Aid for Injured in the Quota Movement'];
@@ -47,7 +52,7 @@ function addTransactionHistory(cardId, amount) {
     const dateString = now.toDateString() + " " + now.toLocaleTimeString('en-GB', { timeZone: 'ASIA/DHAKA' });
 
     const historyDiv = document.createElement('div');
-    historyDiv.className = 'bg-white p-4 max-w-[1170px] mx-auto rounded-lg shadow-md';
+    historyDiv.className = 'bg-white p-4 max-w-[1170px] mx-auto rounded-lg border border-gray-200';
 
     historyDiv.innerHTML = `
       <h3 class="text-lg font-semibold">${amount} Taka donated for ${cardTitles[cardId - 1]}</h3>
